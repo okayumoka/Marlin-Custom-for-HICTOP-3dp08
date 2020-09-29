@@ -478,7 +478,8 @@
 
 // Comment the following line to disable PID and enable bang-bang.
 #define PIDTEMP
-#define BANG_MAX 255     // Limits current to nozzle while in bang-bang mode; 255=full current
+// #define BANG_MAX 255     // Limits current to nozzle while in bang-bang mode; 255=full current
+#define BANG_MAX 128    // Limits current to nozzle while in bang-bang mode; 255=full current
 #define PID_MAX BANG_MAX // Limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #define PID_K1 0.95      // Smoothing factor within any PID loop
 
@@ -491,9 +492,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Ultimaker
-  #define DEFAULT_Kp 22.2
-  #define DEFAULT_Ki 1.08
-  #define DEFAULT_Kd 114
+  // #define DEFAULT_Kp 22.2
+  // #define DEFAULT_Ki 1.08
+  // #define DEFAULT_Kd 114
 
   // MakerGear
   //#define DEFAULT_Kp 7.0
@@ -505,6 +506,11 @@
   //#define DEFAULT_Ki 2.25
   //#define DEFAULT_Kd 440
 
+  // SHINA
+  // https://www.amazon.co.jp/dp/B07X1VXHLW/ref=cm_sw_r_tw_dp_x_9ACCFb8SZG7AS
+  #define DEFAULT_Kp 8.34
+  #define DEFAULT_Ki 0.39
+  #define DEFAULT_Kd 44.25
 #endif // PIDTEMP
 
 //===========================================================================
@@ -1002,7 +1008,7 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 20
+#define PROBING_MARGIN 25
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_SPEED (133*60)
@@ -1134,7 +1140,7 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 210
+#define X_BED_SIZE 200
 #define Y_BED_SIZE 270
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
