@@ -479,7 +479,7 @@
 // Comment the following line to disable PID and enable bang-bang.
 #define PIDTEMP
 // #define BANG_MAX 255     // Limits current to nozzle while in bang-bang mode; 255=full current
-#define BANG_MAX 220    // Limits current to nozzle while in bang-bang mode; 255=full current
+#define BANG_MAX 255    // Limits current to nozzle while in bang-bang mode; 255=full current
 #define PID_MAX BANG_MAX // Limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #define PID_K1 0.95      // Smoothing factor within any PID loop
 
@@ -508,9 +508,9 @@
 
   // SHINA
   // https://www.amazon.co.jp/dp/B07X1VXHLW/ref=cm_sw_r_tw_dp_x_9ACCFb8SZG7AS
-  #define DEFAULT_Kp 8.34
-  #define DEFAULT_Ki 0.39
-  #define DEFAULT_Kd 44.25
+  #define DEFAULT_Kp 13.35
+  #define DEFAULT_Ki 0.99
+  #define DEFAULT_Kd 45.10
 #endif // PIDTEMP
 
 //===========================================================================
@@ -565,7 +565,7 @@
   //#define PID_DEBUG             // Sends debug data to the serial port. Use 'M303 D' to toggle activation.
   //#define PID_OPENLOOP          // Puts PID in open loop. M104/M140 sets the output power from 0 to PID_MAX
   //#define SLOW_PWM_HEATERS      // PWM with very low frequency (roughly 0.125Hz=8s) and minimum state time of approximately 1s useful for heaters driven by a relay
-  #define PID_FUNCTIONAL_RANGE 10 // If the temperature difference between the target temperature and the actual temperature
+  #define PID_FUNCTIONAL_RANGE 15 // If the temperature difference between the target temperature and the actual temperature
                                   // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
 #endif
 
